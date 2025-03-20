@@ -1,8 +1,8 @@
 import 'dart:io';
 
 void main() {
-
-    print("Calculadora inteligente \n");
+  while (true) {
+    print("\n Calculadora inteligente \n");
     print('1. Exibir "Olá, Dart!"');
     print("2. Calcular a área de um retângulo");
     print("3. Verificar se um número é par ou ímpar");
@@ -124,4 +124,4 @@ void main() {
         print("Escolha apenas valores entre 1 e 9.");
     }
   }
-
+}
