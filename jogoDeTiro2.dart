@@ -4,8 +4,8 @@ import 'dart:math';
 class JogoTiro {
   final int largura = 20;
   late int alvo;
-  int jogador1 = 10; // Posição inicial do Jogador 1
-  int jogador2 = 15; // Posição inicial do Jogador 2
+  int jogador1 = 10;
+  int jogador2 = 15; 
 
   JogoTiro() {
     alvo = Random().nextInt(largura);
@@ -14,20 +14,20 @@ class JogoTiro {
   void exibirJogo() {
     for (int i = 0; i < largura; i++) {
       if (i == jogador1) {
-        stdout.write('🔫'); // Jogador 1
+        stdout.write('🔫'); 
       } else if (i == jogador2) {
-        stdout.write('🔫'); // Jogador 2
+        stdout.write('🔫'); 
       } else if (i == alvo) {
-        stdout.write('🎯'); // Alvo
+        stdout.write('🎯');
       } else {
-        stdout.write('-'); // Espaço vazio
+        stdout.write('-'); 
       }
     }
     print('');
   }
 
   void moverJogador(int jogador, String direcao) {
-    if (jogador == 1) {
+    if (jogador == 1) { 
       if (direcao == 'a' && jogador1 > 0) {
         jogador1--;
       } else if (direcao == 'd' && jogador1 < largura - 1) {
@@ -53,17 +53,19 @@ class JogoTiro {
 
 void main() {
   print("Deseja jogar com 1 ou 2 jogadores?");
-  String? escolha = stdin.readLineSync();
+  String? escolha = stdin.readLineSync();  
+  //o programa pergunta ao usuário se ele prefere iniciar o jogo com 1 ou 2 jogadores
 
   switch (escolha) {
-    case '1':
+    case '1': //caso o usuário escolha jogar sozinho retorna ao caso 1
       JogoTiro jogo = JogoTiro();
       String? comando;
 
       print("\n=== JOGO DE TIRO ===");
-      print("Use 'a' para esquerda, 'd' para direita e 'f' para atirar!\n");
+      print("Use 'a' para esquerda, 'd' para direita e 'f' para atirar!\n"); 
+      // o programa exibe os comandos que o jogador deve usar para mover a arma até alcançar o alvo
 
-      while (true) {
+      while (true) { //enquanto o jogador não alcançar o alvo o jogo irá continuar rodando
         jogo.exibirJogo();
         comando = stdin.readLineSync();
 
@@ -73,16 +75,18 @@ void main() {
           if (jogo.atirar(1)) {
             print("\n🎯 Jogador 1 acertou o alvo! Parabéns! 🎯\n");
             break;
+            //caso o jogador acerte o alvo ele exibe a seguinte mensagem
           } else {
             print("\n💥 Jogador 1 errou! Tente novamente.\n");
-          }
+          } //caso o jogador erre o alvo ele exibe a seguinte mensagem
         } else {
           print("\nComando inválido! Use 'a', 'd' ou 'f'.\n");
+          // e caso o jogador insira uma tecla que não seja "a","d" ou "f" o alvo ele exibe a seguinte mensagem
         }
       }
       break;
 
-    case '2':
+    case '2': //caso o usuário escolha jogar com outra pessoa retorna ao caso 2
       JogoTiro jogo = JogoTiro();
       String? comando;
       bool jogador1Venceu = false;
@@ -91,10 +95,10 @@ void main() {
       print("\n=== JOGO DE TIRO - 2 JOGADORES ===");
       print("Use 'a' para esquerda, 'd' para direita e 'f' para atirar!\n");
 
-      while (true) {
+      while (true) { //o programa vai continuar funcionando até que um dos dois jogadores ganhe, caso um dos dois ganhe o programa se encerra
         jogo.exibirJogo();
 
-        // Jogador 1
+       // vez do jogador 1
         stdout.write("Jogador 1: ");
         comando = stdin.readLineSync();
         if (comando == 'a' || comando == 'd') {
@@ -114,7 +118,7 @@ void main() {
           break;
         }
 
-        // Jogador 2
+        // vez do jogador 2
         stdout.write("Jogador 2: ");
         comando = stdin.readLineSync();
         if (comando == 'a' || comando == 'd') {
