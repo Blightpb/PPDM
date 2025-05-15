@@ -268,17 +268,12 @@ class ResultScreen extends StatelessWidget {
   ResultScreen({required this.animal});
 
   final _descriptions = {
-    'Coruja': ' Você é uma coruja, muito sábia!',
-    'Golfinho': 'Você é um golfinho',
-    'Golfinho': '🐬 Você é alegre, comunicativo(a) e divertido(a)!',
-    'Urso': '🐻 Você é tranquilo(a), acolhedor(a) e confiável!',
-
-     'Coruja': 0,
-    'Golfinho': 0,
-    'Pássaro': 0,
-    'Peixe': 0,
-    'Cachorro': 0,
-    'Gato': 0,
+    'Coruja': ' Você é uma coruja, muito sábia🦉',
+    'Golfinho': 'Você é um golfinho, muito alegre🐬',
+    'Pássaro': 'Você é um pássaro, explorador e divertido(a)🦜',
+    'Coelho': 'Você é um coelho, muito querido(a)🐰',
+    'Cachorro': 'Você é um cachorro, muito sociável e companheiro(a)🐶',
+    'Gato': 'Você é um gato, prefere ficar na sua🐱',
   };
 
   @override
